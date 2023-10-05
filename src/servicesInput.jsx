@@ -1,41 +1,39 @@
 import { useState } from "react";
 import { firestore } from "./firebase";
-import { collection, addDoc} from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { imageDb } from "./firebase";
 import { v4 } from "uuid";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 function servicesInput() {
-
-  // imgstoreandtext.................//////////////////////////////////
-  const [myImg, setMyImg] = useState("");
-
-  const handleUpload = (e) => {
-    console.log(e.target.files[0]);
-    const imgs = ref(imageDb, `Imgs/${v4()}`)
-    uploadBytes(imgs, e.target.files[0]).then(data => {
-      console.log(data, "imgs")
-      getDownloadURL(data.ref).then(val => {
-        setMyImg(val)
-      })
-    })
-  }
-
-  // console.log(data, "datadata")
-
-
+  // State variables for form inputs
   const [newName, setNewName] = useState("");
   const [newSkills, setNewSkills] = useState("");
   const [newLocation, setNewLocation] = useState("");
   const [newdescrip, setNewDescrip] = useState("");
   const [newEmailUrl, setNewEmailUrl] = useState("");
   const [newWhatsappLink, setNewWhatsappLink] = useState("");
+  const [myImg, setMyImg] = useState("");
 
-  const JobscollectionRef = collection(firestore, "jobs");
+  // Function to handle image upload
+  const handleUpload = (e) => {
+    console.log(e.target.files[0]);
+    const imgs = ref(imageDb, `Imgs/${v4()}`);
+    uploadBytes(imgs, e.target.files[0]).then((data) => {
+      console.log(data, "imgs");
+      getDownloadURL(data.ref).then((val) => {
+        setMyImg(val);
+      });
+    });
+  };
 
+  // Firestore collection reference
+  const jobscollectionRef = collection(firestore, "jobs");
+
+  // Function to submit a new job
   const onSubmitNewJob = async () => {
     try {
-      await addDoc(JobscollectionRef, {
+      await addDoc(jobscollectionRef, {
         yourName: newName,
         skills: newSkills,
         location: newLocation,

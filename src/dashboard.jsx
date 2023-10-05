@@ -6,26 +6,8 @@ import ViewService from "./viewService";
 import { firestore } from "./firebase";
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
-// import { imageDb } from "./firebase";
-// import { v4 } from "uuid";
-// import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 function dashboard() {
-  // // imgstoreandtext.................//////////////////////////////////
-  // const [myImg, setMyImg] = useState("");
-
-  // const handleUpload = (e) => {
-  //   console.log(e.target.files[0]);
-  //   const imgs = ref(imageDb, `Imgs/${v4()}`)
-  //   uploadBytes(imgs, e.target.files[0]).then(data => {
-  //     console.log(data, "imgs")
-  //     getDownloadURL(data.ref).then(val => {
-  //       setMyImg(val)
-  //     })
-  //   })
-  // }
-
-  // // console.log(data, "datadata")
 
   const handleLogout = () => {
     localStorage.removeItem("profilePic");
