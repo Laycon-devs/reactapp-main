@@ -20,7 +20,10 @@ function theme() {
               Forget the old rules. You can have the best people. Right now.
               Right here.
             </h4>
-            <Link to={"./login"}  className="mt-4 btn btn-outline-warning rounded-5 px-4">
+            <Link
+              to={"./login"}
+              className="mt-4 btn btn-outline-warning rounded-5 px-4"
+            >
               Get Started
             </Link>
           </div>
@@ -51,7 +54,7 @@ function theme() {
         <div className="row">
           <div className="col-lg-6">
             <img
-              src="./img/black-man-1.avif"
+              src="./img/photographer_man.jpeg"
               className="img-fluid h-100 rounded-4 shadow-lg"
               alt=""
             />
@@ -69,8 +72,8 @@ function theme() {
               <li className="list-group-item d-flex justify-content-between align-items-start mb-3">
                 <div className="ms-2 me-auto">
                   <div className="fw-bold">
-                    <i className="bi bi-pencil-square text-warning fs-5 pe-2"></i>No
-                    cost to join
+                    <i className="bi bi-pencil-square text-warning fs-5 pe-2"></i>
+                    No cost to join
                   </div>
                   Register, Browse professionals and Explore.
                 </div>
@@ -78,8 +81,8 @@ function theme() {
               <li className="list-group-item d-flex justify-content-between align-items-start mb-3">
                 <div className="ms-2 me-auto">
                   <div className="fw-bold">
-                    <i className="bi bi-pin-angle text-warning fs-5 pe-2"></i>Post a
-                    service and get hire
+                    <i className="bi bi-pin-angle text-warning fs-5 pe-2"></i>
+                    Post a service and get hire
                   </div>
                   Finding services doesn't have to be a chore. Post a service or
                   we can search for you!
@@ -88,15 +91,18 @@ function theme() {
               <li className="list-group-item d-flex justify-content-between align-items-start mb-3">
                 <div className="ms-2 me-auto">
                   <div className="fw-bold">
-                    <i className="bi bi-stars text-warning fs-5 pe-2"></i>Work with
-                    the best
+                    <i className="bi bi-stars text-warning fs-5 pe-2"></i>Work
+                    with the best
                   </div>
                   Hire, classify and pay your talent
                 </div>
               </li>
             </ol>
 
-            <Link to={"./login"} className="ms-5 mt-4 btn btn-warning rounded-5 px-4">
+            <Link
+              to={"./login"}
+              className="ms-5 mt-4 btn btn-warning rounded-5 px-4"
+            >
               Login
             </Link>
           </div>

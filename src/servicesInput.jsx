@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { firestore } from "./firebase";
 import { collection, addDoc } from "firebase/firestore";
-import { imageDb } from "./firebase";
-import { v4 } from "uuid";
-import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
+// import { imageDb } from "./firebase";
+// import { v4 } from "uuid";
+// import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
-function servicesInput() {
+function servicesInput({ handleUpload, myImg }) {
   // State variables for form inputs
   const [newName, setNewName] = useState("");
   const [newSkills, setNewSkills] = useState("");
@@ -13,20 +13,22 @@ function servicesInput() {
   const [newdescrip, setNewDescrip] = useState("");
   const [newEmailUrl, setNewEmailUrl] = useState("");
   const [newWhatsappLink, setNewWhatsappLink] = useState("");
-  const [myImg, setMyImg] = useState("");
+  // const [myImg, setMyImg] = useState("");
 
-  // Function to handle image upload
-  const handleUpload = (e) => {
-    console.log(e.target.files[0]);
-    const imgs = ref(imageDb, `Imgs/${v4()}`);
-    uploadBytes(imgs, e.target.files[0]).then((data) => {
-      console.log(data, "imgs");
-      getDownloadURL(data.ref).then((val) => {
-        setMyImg(val);
-      });
-    });
-  };
-
+  // // Function to handle image upload
+  // const handleUpload = async (e) => {
+  //   try {
+  //     const file = e.target.files[0];
+  //     // console.log(file);
+  //     const imgs = ref(imageDb, `imgs/${v4()}`);
+  //     const data = await uploadBytes(imgs, file);
+  //     console.log(data, "imgs");
+  //     const val = await getDownloadURL(data.ref);
+  //     setMyImg(val);
+  //   } catch (error) {
+  //     console.error("Error uploading image: ", error);
+  //   }
+  // };
   // Firestore collection reference
   const jobscollectionRef = collection(firestore, "jobs");
 
@@ -40,7 +42,7 @@ function servicesInput() {
         descrip: newdescrip,
         emailUrl: newEmailUrl,
         whatsappLink: newWhatsappLink,
-        imgUrl: myImg,
+        imgUrl: myImg
       });
     } catch (err) {
       console.error(err);
@@ -55,7 +57,7 @@ function servicesInput() {
         id="staticBackdrop"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
-        tabIndex={-1}
+        tabindex={-1}
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
@@ -146,6 +148,7 @@ function servicesInput() {
                     <option>Furniture Upholstery</option>
                     <option>Food Processing and Packaging</option>
                     <option>Computer Literacy</option>
+                    <option>Software Developer</option>
                     <option>Basic Coding and Programming</option>
                     <option>
                       Graphic Design using Software (e.g., Adobe Suite)
@@ -162,15 +165,16 @@ function servicesInput() {
                     <option>
                       Online Advertising (Google Ads, Facebook Ads)
                     </option>
-                    <option>UI/UX Design</option>
+                    <option>UI/UX Designer</option>
                     <option>Mobile App Development</option>
-                    <option>Cybersecurity Basics</option>
+                    <option>Cybersecurity Developer</option>
                     <option>Cloud Computing (e.g., AWS, Azure)</option>
                     <option>
                       Virtual Reality (VR) and Augmented Reality (AR)
                     </option>
                     <option>3D Modeling and Animation</option>
                     <option>Digital Copywriting</option>
+                    <option>illustration Designer</option>
                     <option>E-book Publishing</option>
                     <option>Online Course Creation</option>
                     <option>Influencer Marketing</option>
@@ -253,7 +257,7 @@ function servicesInput() {
                     onChange={(e) => setNewDescrip(e.target.value)}
                     type="text"
                     className="form-control p-3"
-                    placeholder="Add Description and Your Address"
+                    placeholder="Describe your recent work here"
                   />
                 </div>
                 <div className="col">
@@ -288,23 +292,23 @@ function servicesInput() {
         </div>
       </div>
       <div
-        class="modal fade"
+        className="modal fade"
         id="exampleModalsuccessmsg"
         tabindex="-1"
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header border-0">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header border-0">
               <button
                 type="button"
-                class="btn-close"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
-            <div class="modal-body text-center">
+            <div className="modal-body text-center">
               <img
                 className="img-fluid w-50"
                 src="./img/checked.webp"

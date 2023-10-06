@@ -6,8 +6,27 @@ import ViewService from "./viewService";
 import { firestore } from "./firebase";
 import { useEffect, useState } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
+import { imageDb } from "./firebase";
+import { v4 } from "uuid";
+import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 function dashboard() {
+  const [myImg, setMyImg] = useState("");
+
+  // Function to handle image upload
+  const handleUpload = async (e) => {
+    try {
+      const file = e.target.files[0];
+      // console.log(file);
+      const imgs = ref(imageDb, `imgs/${v4()}`);
+      const data = await uploadBytes(imgs, file);
+      console.log(data, "imgs");
+      const val = await getDownloadURL(data.ref);
+      setMyImg(val);
+    } catch (error) {
+      console.error("Error uploading image: ", error);
+    }
+  };
 
   const handleLogout = () => {
     localStorage.removeItem("profilePic");
@@ -97,7 +116,7 @@ function dashboard() {
       {/* SIDEBAR-------------------- */}
       <div
         className="offcanvas offcanvas-start rounded-end-4"
-        tabIndex={-1}
+        tabindex={-1}
         id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel"
       >
@@ -156,7 +175,7 @@ function dashboard() {
           <ServicesList open={() => setViewJob(job)} key={job.id} {...job} />
         ))
       )}
-      <ServicesInput />
+      <ServicesInput handleUpload={handleUpload} myImg={myImg} />
       <ViewService job={viewJob} />
     </div>
   );

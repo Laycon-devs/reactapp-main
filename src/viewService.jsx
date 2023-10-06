@@ -7,7 +7,7 @@ function viewService(props) {
         id="staticBackdrop2"
         data-bs-backdrop="static"
         data-bs-keyboard="false"
-        tabIndex={-1}
+        tabindex={-1}
         aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
@@ -32,7 +32,6 @@ function viewService(props) {
                 <div className="card-header text-success fw-bold">{props.job.yourName}</div>
                 <div className="card-body">
                   <h5 className="card-title">{props.job.skills}</h5>
-                  <p className="card-text">{props.job.descrip}</p>
                   <div className="d-flex justify-content-center align-items-center">
                     <a
                       href={`https://wa.me/+234${props.job.whatsappLink}`}
@@ -65,7 +64,8 @@ function viewService(props) {
                     My Recent Work
                   </h4>
                   <div className="col">
-                    {}
+                  <h4 className="card-text">{props.job.descrip}</h4>
+                    <img src={props.job.imgUrl} className="img-fluid w-100 rounded" alt="recent work" />
                   </div>
                 </div>
               </div>
