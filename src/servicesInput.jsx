@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { firestore } from "./firebase";
 import { collection, addDoc } from "firebase/firestore";
-// import { imageDb } from "./firebase";
-// import { v4 } from "uuid";
-// import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 
 function servicesInput({ handleUpload, myImg }) {
   // State variables for form inputs
@@ -13,23 +10,7 @@ function servicesInput({ handleUpload, myImg }) {
   const [newdescrip, setNewDescrip] = useState("");
   const [newEmailUrl, setNewEmailUrl] = useState("");
   const [newWhatsappLink, setNewWhatsappLink] = useState("");
-  // const [myImg, setMyImg] = useState("");
-
-  // // Function to handle image upload
-  // const handleUpload = async (e) => {
-  //   try {
-  //     const file = e.target.files[0];
-  //     // console.log(file);
-  //     const imgs = ref(imageDb, `imgs/${v4()}`);
-  //     const data = await uploadBytes(imgs, file);
-  //     console.log(data, "imgs");
-  //     const val = await getDownloadURL(data.ref);
-  //     setMyImg(val);
-  //   } catch (error) {
-  //     console.error("Error uploading image: ", error);
-  //   }
-  // };
-  // Firestore collection reference
+  
   const jobscollectionRef = collection(firestore, "jobs");
 
   // Function to submit a new job

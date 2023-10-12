@@ -23,7 +23,7 @@ function search(props) {
   return (
     <div>
       {/* -----------------SERVICES AND LOCATION LIST----------------- */}
-      <div className="container-fluid bg-warning p-5 pb-5">
+      <div className="container-fluid bg-black p-5 pb-5">
         <nav className="bg-body-tertiary p-lg-2 p-3 w-100 rounded-4 w-75 mx-auto">
           <div className="container-fluid">
             <h3 className="fw-bold text-center">Browse Services by Category</h3>

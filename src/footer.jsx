@@ -3,10 +3,10 @@ function footer() {
     <div>
       <footer>
         <div
-          className="container p-lg-5 p-3 ms-auto mt-5 rounded-top-5"
-          style={{
-            backgroundColor: "#faf689",
-          }}
+          className="container p-lg-5 p-3 ms-auto mt-5 rounded-top-5 bg-warning"
+          // style={{
+          //   backgroundColor: "#faf689",
+          // }}
         >
           <div className="px-lg-5 d-flex justify-content-center align-items-center">
             <img
@@ -23,10 +23,10 @@ function footer() {
           <div className="d-flex justify-content-center align-items-end">
             <a
               href=""
-              className="px-5 text-decoration-none"
-              style={{
-                color: "yellowgreen",
-              }}
+              className="px-5 text-decoration-none text-white"
+              // style={{
+              //   color: "yellowgreen",
+              // }}
             >
               Terms
             </a>
@@ -40,20 +40,20 @@ function footer() {
             </div>
             <a
               href=""
-              className="px-5 text-decoration-none"
-              style={{
-                color: "yellowgreen",
-              }}
+              className="px-5 text-decoration-none text-white"
+              // style={{
+              //   color: "yellowgreen",
+              // }}
             >
               Privacy
             </a>
           </div>
           <a href="#">
             <i
-              className="bi bi-arrow-up-circle fs-2 float-end"
-              style={{
-                color: "yellowgreen",
-              }}
+              className="bi bi-arrow-up-circle fs-2 float-end text-black"
+              // style={{
+              //   color: "yellowgreen",
+              // }}
             ></i>
           </a>
         </div>
