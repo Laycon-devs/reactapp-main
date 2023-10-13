@@ -1,6 +1,6 @@
 function servicesList(props) {
   return (
-    <div className="bg-black">
+    <div className="bg-white">
       <div className="container text-center text-dark fw-bold p-5">
         <div
           className="row d-flex p-5 rounded-4 shadow justify-content-center align-items-center"

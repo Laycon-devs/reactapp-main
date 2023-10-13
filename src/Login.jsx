@@ -6,13 +6,13 @@ function Login() {
   return (
     <div className="bg-black">
       <Navbar />
-      <div className="container-fluid p-5 bg-black rounded-bottom-5">
+      <div className="container-fluid p-5 bg-warning rounded-bottom-5">
         <div className="row">
           <div className="col-lg-6 text-center d-block">
             <h2 className="fw-bold text-white mb-3">
               Post a service and hire a pro
             </h2>
-            <p className="fs-4 text-secondary">
+            <p className="fs-4 text-black">
               Meet clients you're excited to work with and take your career or
               business to new heights.
             </p>
@@ -21,13 +21,13 @@ function Login() {
               className="img-fluid w-100 rounded-4 mb-3"
               alt="woman"
             />
-            <p className="fs-4 text-secondary">
+            <p className="fs-4 text-black">
               Find opportunities for every stage of your freelance career
             </p>
           </div>
 
           <div className="col-lg-6 text-center my-auto">
-            <div className="login rounded-4 border bg-warning p-3 p-md-5 shadow-lg border-0">
+            <div className="login rounded-4 border bg-success p-3 p-md-5 shadow-lg border-0">
               <h2 className="mb-3 text-center fw-bold text-white">Sign In</h2>
               <a
                 onClick={signInWithGoogle}

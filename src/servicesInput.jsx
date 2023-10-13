@@ -214,12 +214,16 @@ function servicesInput({ handleUpload, myImg }) {
                   </select>
                 </div>
                 <div className="col">
-                  <input
-                    onChange={(e) => setNewEmailUrl(e.target.value)}
-                    type="text"
-                    className="form-control p-3"
-                    placeholder="Enter Work Email"
-                  />
+                <div className="fw-bold">
+                    Your recent Work here
+                    <input
+                      type="file"
+                      className="form-control p-3"
+                      id="inputFile"
+                      placeholder="Upload your recent work"
+                      onChange={(e) => handleUpload(e)}
+                    />
+                  </div>
                 </div>
                 <div className="col input-group">
                   <span className="input-group-text" id="inputGroup-sizing-sm">
@@ -242,16 +246,12 @@ function servicesInput({ handleUpload, myImg }) {
                   />
                 </div>
                 <div className="col">
-                  <div className="fw-bold">
-                    Your recent Work here
-                    <input
-                      type="file"
-                      className="form-control p-3"
-                      id="inputFile"
-                      placeholder="Upload your recent work"
-                      onChange={(e) => handleUpload(e)}
-                    />
-                  </div>
+                <input
+                    onChange={(e) => setNewEmailUrl(e.target.value)}
+                    type="text"
+                    className="form-control p-3"
+                    placeholder="Enter Work Email"
+                  />
                 </div>
               </div>
             </div>

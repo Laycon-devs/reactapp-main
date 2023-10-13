@@ -115,18 +115,18 @@ function dashboard() {
 
       {/* SIDEBAR-------------------- */}
       <div
-        className="offcanvas offcanvas-start rounded-end-4 bg-black"
+        className="offcanvas offcanvas-start rounded-end-4 bg-white"
         tabindex={-1}
         id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel"
       >
         <div className="offcanvas-header text-center">
-          <h5 className="offcanvas-title fw-bold text-white" id="offcanvasNavbarLabel">
+          <h5 className="offcanvas-title fw-bold text-black" id="offcanvasNavbarLabel">
             Profile
           </h5>
           <button
             type="button"
-            className="btn-close bg-white"
+            className="btn-close"
             data-bs-dismiss="offcanvas"
             aria-label="Close"
           />
@@ -138,11 +138,11 @@ function dashboard() {
             alt=""
           />
           <div className="d-flex justify-content-center align-items-start mb-3">
-            <h5 className="fs-5 text-white">{localStorage.getItem("name")}</h5>
+            <h5 className="fs-5 text-black">{localStorage.getItem("name")}</h5>
           </div>
           <div className="d-flex justify-content-center align-items-start mb-5">
             <i className="bi bi-envelope fs-4 pe-2 text-success"></i>
-            <p className="fs-5 text-white">{localStorage.getItem("email")}</p>
+            <p className="fs-5 text-black">{localStorage.getItem("email")}</p>
           </div>
           <div className="d-flex justify-content-center align-items-center">
             <button
